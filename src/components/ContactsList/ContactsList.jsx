@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { selectContacts, selectFilter, selectIsLoading } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
 import {
   ContactItem,
@@ -13,6 +13,7 @@ export const ContactsList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
+  const isLoading = useSelector(selectIsLoading);
 
   const filteredContacts = contacts.filter(item =>
     item.name.toLowerCase().includes(filter)
@@ -31,6 +32,7 @@ export const ContactsList = () => {
             {number}
           </span>
           <Button
+            disabled={isLoading}
             onClick={() => {
               dispatch(deleteContact(id));
             }}
