@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from 'components/SharedLayout';
-import { Home } from 'pages/Home';
+import { Home } from 'pages/Home/Home';
 import { Contacts } from 'pages/Contacts';
 
 // import { useDispatch, useSelector } from 'react-redux';

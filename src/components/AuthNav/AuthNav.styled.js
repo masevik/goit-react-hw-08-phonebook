@@ -6,7 +6,8 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   font-size: 25px;
 
-  &.active {
+  &.active,
+  :hover {
     color: #efb343;
   }
 

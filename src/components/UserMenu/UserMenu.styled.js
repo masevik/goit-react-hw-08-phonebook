@@ -11,9 +11,14 @@ export const UserName = styled.p`
 
 export const Button = styled.button`
   padding: 5px 15px;
-  color: #ffffff;
+  color: #efb343;
   font-size: 25px;
   background: transparent;
-  border: 1px solid #ffffff;
+  border: 1px solid #efb343;
   border-radius: 5px;
+
+  &:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
 `;
