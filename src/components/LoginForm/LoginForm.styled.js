@@ -12,17 +12,23 @@ export const StyledForm = styled(Form)`
   margin-bottom: 20px;
   padding: 20px;
   border: 1px solid black;
+  color: #ffffff;
+  background: #3f51b5;
 `;
 
 export const Button = styled.button`
-  width: 120px;
-  height: 35px;
-  margin-left: 20px;
-  padding: 5px;
+  padding: 5px 15px;
+  color: #efb343;
+  font-size: 24px;
+  background: transparent;
+  border: 1px solid #efb343;
   border-radius: 5px;
-  border: none;
-  font-weight: 600;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
 
   &:active {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);

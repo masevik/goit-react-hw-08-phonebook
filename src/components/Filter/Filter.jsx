@@ -17,7 +17,14 @@ export const Filter = () => {
   };
 
   return (
-    <Box display="flex" flexDirection="column">
+    <Box
+      display="flex"
+      flexDirection="column"
+      backgroundColor="#3f51b5"
+      width="500px"
+      borderRadius="5px"
+      mb="20px"
+    >
       <Label htmlFor={filterInputId}>Find contact by name</Label>
       <Input
         type="text"

@@ -4,8 +4,11 @@ import { RiUser3Line, RiPhoneLine } from 'react-icons/ri';
 export const ContactItem = styled.li`
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
-  margin-bottom: 5px;
+  color: #ffffff;
+
+  :not(:last-child) {
+    margin-bottom: 5px;
+  }
 
   span {
     width: 450px;
@@ -24,13 +27,20 @@ export const PhoneIcon = styled(RiPhoneLine)`
 `;
 
 export const Button = styled.button`
-  width: 150px;
-  height: 25px;
-
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  font-weight: 600;
+  padding: 5px 15px;
+  color: #efb343;
   font-size: 14px;
+  background: transparent;
+  border: 1px solid #efb343;
+  border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+
+  &:active {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
 `;

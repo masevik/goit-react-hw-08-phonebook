@@ -5,5 +5,5 @@ export const Title = styled.h2`
 `;
 
 export const StyledSection = styled.section`
-  width: 500px;
+  width: 100%;
 `;

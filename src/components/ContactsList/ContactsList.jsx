@@ -21,7 +21,16 @@ export const ContactsList = () => {
   const actualList = filter === '' ? contacts : filteredContacts;
 
   return (
-    <Box width="500px" pl="20px" pr="20px" as="ul">
+    <Box
+      width="100%"
+      pl="20px"
+      pr="20px"
+      pt="20px"
+      pb="20px"
+      borderRadius="5px"
+      as="ul"
+      backgroundColor="#3f51b5"
+    >
       {actualList.map(({ id, name, number }) => (
         <ContactItem key={id}>
           <span>

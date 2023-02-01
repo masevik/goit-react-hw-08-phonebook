@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet';
 import { nanoid } from 'nanoid';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -10,7 +9,6 @@ import {
   Label,
   Error,
 } from './LoginForm.styled';
-import { Box } from 'components/Box';
 
 const initialValues = { login: '', password: '' };
 
