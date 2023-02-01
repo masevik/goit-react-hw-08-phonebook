@@ -9,7 +9,6 @@ import {
   Label,
   Error,
 } from './RegisterForm.styled';
-import { Box } from 'components/Box';
 
 const initialValues = { login: '', email: '', password: '' };
 
