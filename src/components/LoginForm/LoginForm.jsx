@@ -1,9 +1,15 @@
-// import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { nanoid } from 'nanoid';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { Title, Button, StyledForm, Input, Label, Error } from './Login.styled';
+import {
+  Title,
+  Button,
+  StyledForm,
+  Input,
+  Label,
+  Error,
+} from './LoginForm.styled';
 import { Box } from 'components/Box';
 
 const initialValues = { login: '', password: '' };
@@ -26,10 +32,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Box ml="50px" mt="20px">
-      <Helmet>
-        <title>Log in</title>
-      </Helmet>
+    <>
       <Title>Please enter login and password</Title>
       <Formik
         initialValues={initialValues}
@@ -51,6 +54,6 @@ export const LoginForm = () => {
           <Button type="submit">LogIn</Button>
         </StyledForm>
       </Formik>
-    </Box>
+    </>
   );
 };
