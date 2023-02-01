@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from 'components/SharedLayout';
 import { Home } from 'pages/Home/Home';
 import { Contacts } from 'pages/Contacts';
+import { LoginForm } from 'pages/Login';
+import { RegisterForm } from 'pages/Register';
 
 // import { useDispatch, useSelector } from 'react-redux';
 // import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
@@ -30,6 +32,8 @@ export const App = () => {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/login" element={<LoginForm />}></Route>
+          <Route path="/register" element={<RegisterForm />}></Route>
         </Route>
       </Routes>
     </>

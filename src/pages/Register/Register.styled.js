@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
+export const Title = styled.h2`
+  margin-bottom: 15px;
+`;
+
 export const StyledForm = styled(Form)`
   width: 500px;
   display: flex;

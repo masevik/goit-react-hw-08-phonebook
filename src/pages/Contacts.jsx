@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { fetchContacts } from 'redux/operations';
 import { Section } from 'components/Section';
 import { PhonebookForm } from 'components/PhonebookForm';
@@ -21,6 +22,9 @@ export const Contacts = () => {
 
   return (
     <Box ml="50px" mt="20px">
+      <Helmet>
+        <title>Your contacts</title>
+      </Helmet>
       <Section title="Phonebook">
         <PhonebookForm />
       </Section>
