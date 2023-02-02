@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { selectFilter } from 'redux/selectors';
-import { filterContact } from 'redux/filterSlice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { filterContact } from 'redux/contacts/filterSlice';
 import { Input, Label, Button } from './Filter.styled';
 import { Box } from 'components/Box';
 

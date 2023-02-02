@@ -1,8 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
+import {
+  selectContacts,
+  selectError,
+  selectIsLoading,
+} from 'redux/contacts/selectors';
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 import { Section } from 'components/Section';
 import { PhonebookForm } from 'components/PhonebookForm';
 import { ContactsList } from 'components/ContactsList';

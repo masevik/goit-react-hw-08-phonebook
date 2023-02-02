@@ -17,6 +17,7 @@ export const StyledForm = styled(Form)`
 `;
 
 export const Button = styled.button`
+  margin-top: 20px;
   padding: 5px 15px;
   color: #efb343;
   font-size: 24px;
@@ -41,7 +42,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled(Field)`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 100%;
   height: 35px;
 `;

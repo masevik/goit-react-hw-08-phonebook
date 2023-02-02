@@ -1,6 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectFilter, selectIsLoading } from 'redux/selectors';
-import { deleteContact } from 'redux/operations';
+import {
+  selectContacts,
+  selectFilter,
+  selectIsLoading,
+} from 'redux/contacts/selectors';
+import { deleteContact } from 'redux/contacts/operations';
 import {
   ContactItem,
   UserIcon,
@@ -24,7 +28,7 @@ export const ContactsList = () => {
     <>
       {actualList.length > 0 && (
         <Box
-          width="100%"
+          maxWidth="1000px"
           pl="20px"
           pr="20px"
           pt="20px"
