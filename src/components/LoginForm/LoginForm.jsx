@@ -9,11 +9,16 @@ import {
   Label,
   Error,
 } from './LoginForm.styled';
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/operations';
 
-const initialValues = { login: '', password: '' };
+const initialValues = { email: '', password: '' };
 
 const schema = yup.object().shape({
-  login: yup.string().min(3).max(10).required('Login is a required field'),
+  email: yup
+    .string()
+    .email('Invalid email')
+    .required('Email is a required field'),
   password: yup
     .string()
     .min(3)
@@ -22,10 +27,12 @@ const schema = yup.object().shape({
 });
 
 export const LoginForm = () => {
-  const loginInputId = nanoid();
+  const dispatch = useDispatch();
+  const emailInputId = nanoid();
   const passwordInputId = nanoid();
 
-  const HandleSubmit = ({ login, password }, { resetForm }) => {
+  const HandleSubmit = ({ email, password }, { resetForm }) => {
+    dispatch(logIn({ email, password }));
     resetForm();
   };
 
@@ -38,9 +45,9 @@ export const LoginForm = () => {
         validationSchema={schema}
       >
         <StyledForm>
-          <Label htmlFor={loginInputId}>Login</Label>
-          <Input type="text" name="login" id={loginInputId} />
-          <Error component="span" name="login" />
+          <Label htmlFor={emailInputId}>Email</Label>
+          <Input type="text" name="email" id={emailInputId} />
+          <Error component="span" name="email" />
           <Label htmlFor={passwordInputId}>Password</Label>
           <Input
             type="password"
