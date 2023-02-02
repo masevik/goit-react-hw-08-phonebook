@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
 import { toast } from 'react-toastify';
 
@@ -6,10 +6,6 @@ const initialState = {
   items: [],
   isLoading: false,
   error: null,
-};
-
-const isRejectedAction = action => {
-  return action.type.endsWith('rejected');
 };
 
 const isPendingAction = action => {
@@ -41,13 +37,20 @@ export const contactsSlice = createSlice({
         state.items.splice(index, 1);
         toast.warning(`${action.payload.name} removed`);
       })
-      .addMatcher(isRejectedAction, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-        toast.error('Something went wrong, please try again later', {
-          autoClose: 3000,
-        });
-      })
+      .addMatcher(
+        isAnyOf(
+          fetchContacts.rejected,
+          addContact.rejected,
+          deleteContact.rejected
+        ),
+        (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          toast.error('Something went wrong, please try again later', {
+            autoClose: 3000,
+          });
+        }
+      )
       .addMatcher(isPendingAction, state => {
         state.isLoading = true;
       });

@@ -5,5 +5,6 @@ export const Title = styled.h2`
 `;
 
 export const StyledSection = styled.section`
+  text-align: center;
   width: 100%;
 `;
