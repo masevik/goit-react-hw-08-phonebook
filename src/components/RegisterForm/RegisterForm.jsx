@@ -11,6 +11,7 @@ import {
 } from './RegisterForm.styled';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { Box } from 'components/Box';
 
 const initialValues = { name: '', email: '', password: '' };
 
@@ -39,7 +40,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <>
+    <Box display="flex" flexDirection="column" alignItems="center">
       <Title>Please your data for registration</Title>
       <Formik
         initialValues={initialValues}
@@ -64,6 +65,6 @@ export const RegisterForm = () => {
           <Button type="submit">Registration</Button>
         </StyledForm>
       </Formik>
-    </>
+    </Box>
   );
 };

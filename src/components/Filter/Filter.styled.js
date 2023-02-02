@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Title = styled.h2`
+  margin-bottom: 15px;
+`;
+
 export const Label = styled.label`
   color: #ffffff;
   margin-left: 20px;
@@ -17,12 +21,12 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  width: 100px;
+  width: 120px;
   height: 35px;
   margin-right: 20px;
-  padding: 5px 15px;
+  padding: 3px 15px;
   color: #efb343;
-  font-size: 14px;
+  font-size: 24px;
   background: transparent;
   border: 1px solid #efb343;
   border-radius: 5px;

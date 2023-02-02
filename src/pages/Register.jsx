@@ -4,7 +4,7 @@ import { RegisterForm } from 'components/RegisterForm';
 
 const Register = () => {
   return (
-    <Box ml="50px" mt="20px">
+    <Box ml="50px" mt="100px" mr="50px" mb="20px">
       <Helmet>
         <title>Registration</title>
       </Helmet>

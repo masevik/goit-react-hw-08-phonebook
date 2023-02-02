@@ -27,9 +27,12 @@ export const PhoneIcon = styled(RiPhoneLine)`
 `;
 
 export const Button = styled.button`
-  padding: 5px 15px;
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  padding: 3px 15px;
   color: #efb343;
-  font-size: 14px;
+  font-size: 20px;
   background: transparent;
   border: 1px solid #efb343;
   border-radius: 5px;

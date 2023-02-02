@@ -11,6 +11,7 @@ import {
 } from './LoginForm.styled';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { Box } from 'components/Box';
 
 const initialValues = { email: '', password: '' };
 
@@ -37,7 +38,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <>
+    <Box display="flex" flexDirection="column" alignItems="center">
       <Title>Please enter login and password</Title>
       <Formik
         initialValues={initialValues}
@@ -59,6 +60,6 @@ export const LoginForm = () => {
           <Button type="submit">LogIn</Button>
         </StyledForm>
       </Formik>
-    </>
+    </Box>
   );
 };

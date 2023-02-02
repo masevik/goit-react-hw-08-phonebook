@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { selectFilter } from 'redux/contacts/selectors';
 import { filterContact } from 'redux/contacts/filterSlice';
-import { Input, Label, Button } from './Filter.styled';
+import { Title, Input, Label, Button } from './Filter.styled';
 import { Box } from 'components/Box';
 
 export const Filter = () => {
@@ -17,31 +17,34 @@ export const Filter = () => {
   };
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      backgroundColor="#3f51b5"
-      width="500px"
-      borderRadius="5px"
-      mb="20px"
-    >
-      <Label htmlFor={filterInputId}>Find contact by name</Label>
-      <Box display="flex">
-        <Input
-          type="text"
-          name="filter"
-          id={filterInputId}
-          value={filter}
-          onChange={onFilterChange}
-        />
-        <Button
-          onClick={() => {
-            dispatch(filterContact(''));
-          }}
-        >
-          Clear
-        </Button>
+    <>
+      <Title>Contacts</Title>
+      <Box
+        display="flex"
+        flexDirection="column"
+        backgroundColor="#3f51b5"
+        maxWidth="500px"
+        borderRadius="5px"
+        mb="20px"
+      >
+        <Label htmlFor={filterInputId}>Find contact by name</Label>
+        <Box display="flex">
+          <Input
+            type="text"
+            name="filter"
+            id={filterInputId}
+            value={filter}
+            onChange={onFilterChange}
+          />
+          <Button
+            onClick={() => {
+              dispatch(filterContact(''));
+            }}
+          >
+            Clear
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };

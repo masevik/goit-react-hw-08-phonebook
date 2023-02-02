@@ -28,11 +28,11 @@ export const ContactsList = () => {
     <>
       {actualList.length > 0 && (
         <Box
-          maxWidth="1000px"
+          maxWidth="100%"
           pl="20px"
           pr="20px"
-          pt="20px"
-          pb="20px"
+          pt="10px"
+          pb="10px"
           borderRadius="5px"
           as="ul"
           backgroundColor="#3f51b5"
@@ -46,6 +46,14 @@ export const ContactsList = () => {
                 <PhoneIcon />
                 {number}
               </span>
+              <Button
+                disabled={isLoading}
+                onClick={() => {
+                  dispatch(deleteContact(id));
+                }}
+              >
+                Edit
+              </Button>
               <Button
                 disabled={isLoading}
                 onClick={() => {

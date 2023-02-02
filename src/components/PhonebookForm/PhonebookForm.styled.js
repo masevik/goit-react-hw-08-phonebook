@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
+export const Title = styled.h2`
+  margin-bottom: 15px;
+  font-size: 24px;
+`;
+
 export const StyledForm = styled(Form)`
-  width: 500px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -14,8 +19,9 @@ export const StyledForm = styled(Form)`
 `;
 
 export const Button = styled.button`
-  margin-top: 20px;
-  padding: 5px 15px;
+  width: 120px;
+  margin: 20px auto 0;
+  padding: 3px 15px;
   color: #efb343;
   font-size: 24px;
   background: transparent;
@@ -39,12 +45,12 @@ export const Label = styled.label`
 `;
 
 export const Input = styled(Field)`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
   height: 35px;
 `;
 
 export const Error = styled(ErrorMessage)`
   margin-bottom: 10px;
-  color: red;
+  color: lightgrey;
 `;

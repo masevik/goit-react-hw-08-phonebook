@@ -4,7 +4,7 @@ import { LoginForm } from 'components/LoginForm';
 
 const Login = () => {
   return (
-    <Box ml="50px" mt="20px">
+    <Box ml="50px" mt="100px" mr="50px" mb="20px">
       <Helmet>
         <title>Log in</title>
       </Helmet>

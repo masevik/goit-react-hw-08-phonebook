@@ -3,10 +3,11 @@ import { Form, Field, ErrorMessage } from 'formik';
 
 export const Title = styled.h2`
   margin-bottom: 15px;
+  font-size: 24px;
 `;
 
 export const StyledForm = styled(Form)`
-  width: 500px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -14,6 +15,7 @@ export const StyledForm = styled(Form)`
   border: 1px solid black;
   color: #ffffff;
   background: #3f51b5;
+  /* transform: translateX(50%); */
 `;
 
 export const Button = styled.button`
@@ -42,12 +44,12 @@ export const Label = styled.label`
 `;
 
 export const Input = styled(Field)`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
   height: 35px;
 `;
 
 export const Error = styled(ErrorMessage)`
   margin-bottom: 10px;
-  color: red;
+  color: lightgrey;
 `;

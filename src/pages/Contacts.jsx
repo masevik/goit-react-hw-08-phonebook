@@ -7,7 +7,6 @@ import {
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { fetchContacts } from 'redux/contacts/operations';
-import { Section } from 'components/Section';
 import { PhonebookForm } from 'components/PhonebookForm';
 import { ContactsList } from 'components/ContactsList';
 import { Filter } from 'components/Filter';
@@ -25,14 +24,18 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Box ml="50px" mt="20px" mr="50px" mb="20px">
+    <Box display="flex" ml="50px" mt="50px" mr="50px" mb="20px">
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
-      <Section title="Phonebook">
-        <PhonebookForm />
-      </Section>
-      <Section title="Contacts">
+      <PhonebookForm />
+      <Box
+        display="flex"
+        flexDirection="column"
+        flexGrow="1"
+        alignItems="center"
+        width="500px"
+      >
         {contacts.length > 0 && (
           <>
             <Filter />
@@ -40,7 +43,7 @@ const Contacts = () => {
           </>
         )}
         {isLoading && !error && <Loader />}
-      </Section>
+      </Box>
     </Box>
   );
 };

@@ -5,6 +5,7 @@ import * as yup from 'yup';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import {
+  Title,
   Button,
   StyledForm,
   Input,
@@ -12,6 +13,7 @@ import {
   Error,
 } from './PhonebookForm.styled';
 import { toast } from 'react-toastify';
+import { Box } from 'components/Box';
 
 const initialValues = { name: '', number: '+380' };
 
@@ -49,20 +51,23 @@ export const PhonebookForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={HandleSubmit}
-      validationSchema={schema}
-    >
-      <StyledForm>
-        <Label htmlFor={nameInputId}>Name</Label>
-        <Input type="text" name="name" id={nameInputId} />
-        <Error component="span" name="name" />
-        <Label htmlFor={telInputId}>Number</Label>
-        <Input type="tel" name="number" id={telInputId} />
-        <Error component="span" name="number" />
-        <Button type="submit">Add contact</Button>
-      </StyledForm>
-    </Formik>
+    <Box display="flex" flexDirection="column" alignItems="center" mr="50px">
+      <Title>Add contact</Title>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={HandleSubmit}
+        validationSchema={schema}
+      >
+        <StyledForm>
+          <Label htmlFor={nameInputId}>Name</Label>
+          <Input type="text" name="name" id={nameInputId} />
+          <Error component="span" name="name" />
+          <Label htmlFor={telInputId}>Number</Label>
+          <Input type="tel" name="number" id={telInputId} />
+          <Error component="span" name="number" />
+          <Button type="submit">Submit</Button>
+        </StyledForm>
+      </Formik>
+    </Box>
   );
 };
