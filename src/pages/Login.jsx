@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import { Box } from 'components/Box';
 import { LoginForm } from 'components/LoginForm';
 
-export const Login = () => {
+const Login = () => {
   return (
     <Box ml="50px" mt="20px">
       <Helmet>
@@ -12,3 +12,5 @@ export const Login = () => {
     </Box>
   );
 };
+
+export default Login;

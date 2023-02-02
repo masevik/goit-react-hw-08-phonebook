@@ -10,7 +10,7 @@ import { Filter } from 'components/Filter';
 import { Loader } from 'components/Loader';
 import { Box } from 'components/Box';
 
-export const Contacts = () => {
+const Contacts = () => {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -40,3 +40,5 @@ export const Contacts = () => {
     </Box>
   );
 };
+
+export default Contacts;

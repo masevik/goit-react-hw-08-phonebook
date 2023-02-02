@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import { Box } from 'components/Box';
 import { WelcomeTitle } from 'components/WelcomeTitle';
 
-export const Home = () => {
+const Home = () => {
   return (
     <Box textAlign="center" display="block" marginTop="100px">
       <Helmet>
@@ -12,3 +12,5 @@ export const Home = () => {
     </Box>
   );
 };
+
+export default Home;
