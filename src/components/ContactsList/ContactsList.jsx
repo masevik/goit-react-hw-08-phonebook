@@ -52,14 +52,6 @@ export const ContactsList = () => {
                   dispatch(deleteContact(id));
                 }}
               >
-                Edit
-              </Button>
-              <Button
-                disabled={isLoading}
-                onClick={() => {
-                  dispatch(deleteContact(id));
-                }}
-              >
                 Delete
               </Button>
             </ContactItem>
