@@ -43,7 +43,6 @@ export const contactsSlice = createSlice({
         (state, action) => {
           state.isLoading = false;
           state.error = action.payload;
-          
         }
       )
       .addMatcher(isPendingAction, state => {
