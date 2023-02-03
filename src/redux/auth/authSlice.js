@@ -9,10 +9,6 @@ const initialState = {
   isRefreshing: false,
 };
 
-const isPendingAction = action => {
-  return action.type.endsWith('pending');
-};
-
 const isRejectedAction = action => {
   return action.type.endsWith('rejected');
 };
