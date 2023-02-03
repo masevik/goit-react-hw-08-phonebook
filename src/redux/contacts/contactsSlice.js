@@ -1,6 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
-import { toast } from 'react-toastify';
 
 const initialState = {
   items: [],
@@ -26,7 +25,6 @@ export const contactsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
-        toast.success(`${action.payload.name} is added`);
       })
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -35,7 +33,6 @@ export const contactsSlice = createSlice({
           contact => contact.id === action.payload.id
         );
         state.items.splice(index, 1);
-        toast.warning(`${action.payload.name} removed`);
       })
       .addMatcher(
         isAnyOf(
@@ -46,9 +43,7 @@ export const contactsSlice = createSlice({
         (state, action) => {
           state.isLoading = false;
           state.error = action.payload;
-          toast.error('Something went wrong, please try again later', {
-            autoClose: 3000,
-          });
+          
         }
       )
       .addMatcher(isPendingAction, state => {

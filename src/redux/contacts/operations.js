@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 
 export const fetchContacts = createAsyncThunk(
@@ -8,6 +9,9 @@ export const fetchContacts = createAsyncThunk(
       const response = await axios.get('/contacts');
       return response.data;
     } catch (error) {
+      toast.error('Something went wrong, please try again later', {
+        autoClose: 3000,
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -18,8 +22,12 @@ export const addContact = createAsyncThunk(
   async ({ name, number }, thunkAPI) => {
     try {
       const response = await axios.post('/contacts', { name, number });
+      toast.success(`${name} is added`);
       return response.data;
     } catch (error) {
+      toast.error('Something went wrong, please try again later', {
+        autoClose: 3000,
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -30,8 +38,12 @@ export const deleteContact = createAsyncThunk(
   async (contactId, thunkAPI) => {
     try {
       const response = await axios.delete(`/contacts/${contactId}`);
+      toast.warning(`${response.data} removed`);
       return response.data;
     } catch (error) {
+      toast.error('Something went wrong, please try again later', {
+        autoClose: 3000,
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
